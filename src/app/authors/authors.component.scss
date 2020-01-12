@@ -1,0 +1,14 @@
+$backgroud: #67381F;
+$color: #ECCCBC;
+
+:host {
+    margin-bottom: 1rem;
+}
+
+.bgcolor-primary {
+    background-color: $backgroud;
+}
+
+.color-primary {
+    color:$color;
+}
