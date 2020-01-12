@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./authors.component.scss']
 })
 export class AuthorsComponent implements OnInit {
-  title = 'Autores'
+  title = 'Autores';
+  add = 'Agregar Autores';
+  hide = false;
   constructor() { }
 
   ngOnInit() {
   }
-
+  showForm() {
+    this.hide = !this.hide;
+    if (this.hide) {
+      this.add = 'Ocultar Formulario';
+    } else {
+      this.add = 'Agregar Autores';
+    }
+  }
 }

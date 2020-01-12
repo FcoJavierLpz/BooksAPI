@@ -1,6 +1,25 @@
 <div>
     <span class="categories__title mr-5">{{ title }}</span>
-<button type="button" class="btn btn-light bgcolor-primary color-primary">Agregar autor</button>
+    <button type="button" class="btn btn-light bgcolor-primary color-primary" (click)="showForm()">{{ add }}</button>
+</div>
+<div *ngIf="hide">
+    <div class="d-flex justify-content-start p-4">
+        <form class="form">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nombre</label>
+                <input type="text" class="form-control" id="name" aria-describedby="name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nacionalidad</label>
+                <input type="text" class="form-control" id="nacionalidad" aria-describedby="nacionalidad">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Año de nacimiento</label>
+                <input type="text" class="form-control" id="anio" aria-describedby="anio">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
 </div>
 <section class="carousel">
     <div class="carousel__container">

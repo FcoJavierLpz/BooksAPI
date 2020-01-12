@@ -12,3 +12,16 @@ $color: #ECCCBC;
 .color-primary {
     color:$color;
 }
+
+.form {
+    width: 100%;
+    color: $color;
+}
+
+
+@media only screen and (min-width: 600px) {
+    .form {
+        width: 25%;
+    }
+  }
+  

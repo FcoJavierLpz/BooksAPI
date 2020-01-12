@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent implements OnInit {
-  title = 'Libros'
+  title = 'Libros';
+  add = 'Agregar Libros';
+  hide = false;
   constructor() { }
 
   ngOnInit() {
+  }
+  showForm() {
+    this.hide = !this.hide;
+    if (this.hide) {
+      this.add = 'Ocultar Formulario';
+    } else {
+      this.add = 'Agregar Libros';
+    }
   }
 
 }
