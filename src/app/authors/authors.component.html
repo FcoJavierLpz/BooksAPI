@@ -6,16 +6,20 @@
     <div class="d-flex justify-content-start p-4">
         <form class="form">
             <div class="form-group">
-                <label for="exampleInputEmail1">Nombre</label>
+                <label for="name">Nombre</label>
                 <input type="text" class="form-control" id="name" aria-describedby="name">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Nacionalidad</label>
-                <input type="text" class="form-control" id="nacionalidad" aria-describedby="nacionalidad">
+                <label for="url">Url imagen</label>
+                <input type="text" class="form-control" id="url" aria-describedby="url">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Año de nacimiento</label>
-                <input type="text" class="form-control" id="anio" aria-describedby="anio">
+                <label for="nationality">Nacionalidad</label>
+                <input type="text" class="form-control" id="nationality" aria-describedby="nationality">
+            </div>
+            <div class="form-group">
+                <label for="birthyear">Año de nacimiento</label>
+                <input type="text" class="form-control" id="birthyear" aria-describedby="birthyear">
             </div>
             <button type="submit" class="btn btn-primary">Guardar</button>
         </form>
@@ -23,6 +27,6 @@
 </div>
 <section class="carousel">
     <div class="carousel__container">
-        <app-author></app-author>
+        <app-author *ngFor="let author of authors" [author]="author"></app-author>
     </div>
 </section>
