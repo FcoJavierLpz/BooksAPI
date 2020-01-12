@@ -15,7 +15,7 @@ import { AuthorsComponent } from './authors/authors.component';
 import { AuthorComponent } from './author/author.component';
 import { BooksComponent } from './books/books.component';
 import { BookComponent } from './book/book.component';
-import { MainComponent } from './main/main.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { MainComponent } from './main/main.component';
     AuthorComponent,
     BooksComponent,
     BookComponent,
-    MainComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
