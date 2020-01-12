@@ -16,6 +16,7 @@ import { AuthorComponent } from './author/author.component';
 import { BooksComponent } from './books/books.component';
 import { BookComponent } from './book/book.component';
 import { LayoutComponent } from './layout/layout.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LayoutComponent } from './layout/layout.component';
     AuthorComponent,
     BooksComponent,
     BookComponent,
-    LayoutComponent
+    LayoutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
