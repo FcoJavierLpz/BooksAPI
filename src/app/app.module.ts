@@ -5,6 +5,7 @@ import { environment } from '../environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AuthorsService } from './services/authors.service';
+import { BooksService } from './services/books.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +41,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [AngularFirestore, AuthorsService],
+  providers: [AngularFirestore, AuthorsService, BooksService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

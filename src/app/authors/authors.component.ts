@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthorsService } from '../services/authors.service';
 import { Author } from '../author/author.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';

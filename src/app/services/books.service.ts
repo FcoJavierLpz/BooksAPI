@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { Book } from '../book/book.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,13 @@ export class BooksService {
   public getBook(id: any) {
     return this.firestore.collection('books').doc(id).snapshotChanges();
   }
-  public createBook(book) {
+  public createBook(book: Book) {
     return this.firestore.collection('books').add(book);
   }
-  public editBook(book) {
+  public editBook(book: Book) {
     return this.firestore.collection('books').doc(book.id).set(book);
   }
-  public deleteBook(book) {
-    return this.firestore.collection('books').doc(book.id).delete();
+  public deleteBook(id: string) {
+    return this.firestore.collection('books').doc(id).delete();
   }
 }

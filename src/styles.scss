@@ -13,13 +13,14 @@ body {
 	width: 100%;
 }
 .carousel {
-  display: flex;
-	overflow: scroll;
+  	display: flex;
 	padding-left: 30px;
 	width: 100%;
 	position: relative;
 }
 .carousel__container {
+	display: flex;
+	overflow-x: scroll;
 	transition: 450ms -webkit-transform;
 	transition: 450ms transform;
 	transition: 450ms transform, 450ms -webkit-transform;

@@ -1,11 +1,11 @@
 <div class="carousel-item">
-    <img class="carousel-item__img" src="https://pbs.twimg.com/profile_images/467581434434453504/iFzELOBn_400x400.jpeg" alt="author"/>
+    <img class="carousel-item__img" [src]="book.url" alt="book"/>
     <div class="carousel-item__details">
         <div>
-            <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit">
-            <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete"> 
+            <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit" (click)='editBook(book)'>
+            <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete" (click)="deleteBook(book)">
         </div>
-        <p class="carousel-item__details--title">Título descriptivo</p>
-        <p class="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+        <p class="carousel-item__details--title">{{ book.name }}</p>
+        <p class="carousel-item__details--subtitle">{{ book.author }}</p>
     </div>
 </div>
