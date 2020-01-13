@@ -3,9 +3,9 @@
     <div class="carousel-item__details">
     <div>
         <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit">
-        <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete">
+        <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete" (click)="deleteAuthor(author)">
     </div>
     <p class="carousel-item__details--title">{{ author.name }}</p>
-    <p class="carousel-item__details--subtitle">{{ author.birthYear }} </p>
+    <p class="carousel-item__details--subtitle">{{ author.birth | date: 'dd/MM/yyyy' }} </p>
     </div>
 </div>
