@@ -1,0 +1,34 @@
+<div>
+    <span class="categories__title mr-5">{{ title }}</span>
+    <button type="button" class="btn btn-light bgcolor-primary color-primary" (click)="showForm()">{{ add }}</button>
+</div>
+<div *ngIf="hide">
+    <div class="d-flex justify-content-start p-4">
+        <form class="form" [formGroup]="authorForm" (ngSubmit)="saveAuthor(authorForm.value)">
+            <input type="hidden" formControlName="id">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" formControlName="name" aria-describedby="name">
+            </div>
+            <div class="form-group">
+                <label for="url">Url imagen</label>
+                <input type="text" class="form-control" formControlName="url" aria-describedby="url" required>
+                <div *ngIf="authorForm.get('url').hasError('url')">La url es requerida con extensión .jpg o .png</div>
+            </div>
+            <div class="form-group">
+                <label for="nationality">Nacionalidad</label>
+                <input type="text" class="form-control" formControlName="nationality" aria-describedby="nationality">
+            </div>
+            <div class="form-group">
+                <label for="birth">Fecha nacimiento</label>
+                <input type="date" class="form-control" formControlName="birth" aria-describedby="birth">
+            </div>
+            <input [disabled]="authorForm.invalid" type="submit" class="btn btn-primary" value="Guardar">
+        </form>
+    </div>
+</div>
+<section class="carousel">
+    <div class="carousel__container">
+        <app-author (outAuthor)="modifAuthor($event)" *ngFor="let author of authors" [author]="author"></app-author>
+    </div>
+</section>

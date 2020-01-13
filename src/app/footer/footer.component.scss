@@ -1,0 +1,33 @@
+$backgroud: #67381F;
+$color: #ECCCBC;
+
+:host {
+  align-items: center;
+  background-color: $backgroud;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer {
+  color: $color;
+  a {
+    color: $color;
+    cursor: pointer;
+    font-size: 14px;
+    padding-left: 30px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

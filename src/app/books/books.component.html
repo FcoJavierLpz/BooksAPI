@@ -1,0 +1,35 @@
+<div>
+    <span class="categories__title mr-5">{{ title }}</span>
+    <button type="button" class="btn btn-light bgcolor-primary color-primary" (click)="showForm()">{{ add }}</button>
+</div>
+<div *ngIf="hide">
+    <div class="d-flex justify-content-start p-4">
+        <form class="form" [formGroup]="bookForm" (ngSubmit)="saveBook(bookForm.value)">
+            <input type="hidden" formControlName="id">
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" class="form-control" formControlName="name" aria-describedby="name">
+            </div>
+            <div class="form-group">
+                <label for="author">Author Select</label>
+                <select class="form-control" formControlName="author" aria-describedby="author">
+                  <option *ngFor="let author of authors" value="{{author.name}}">{{author.name}}</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="url">Url imagen</label>
+                <input type="text" class="form-control" formControlName="url" aria-describedby="url">
+            </div>
+            <div class="form-group">
+                <label for="desc">Descripción</label>
+                <textarea class="form-control" name="desc" formControlName="desc" rows="3"></textarea>
+            </div>
+            <input [disabled]="bookForm.invalid" type="submit" class="btn btn-primary" value="Guardar">
+        </form>
+    </div>
+</div>
+<section class="carousel">
+    <div class="carousel__container">
+        <app-book (outBook)="modifBook($event)" *ngFor="let book of books" [book]="book"></app-book>
+    </div>
+</section>

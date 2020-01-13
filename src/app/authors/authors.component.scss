@@ -1,0 +1,25 @@
+$backgroud: #67381F;
+$color: #ECCCBC;
+
+:host {
+    margin-bottom: 1rem;
+}
+
+.bgcolor-primary {
+    background-color: $backgroud;
+}
+
+.color-primary {
+    color:$color;
+}
+
+.form {
+    width: 100%;
+    color: $color;
+}
+
+@media only screen and (min-width: 600px) {
+    .form {
+        width: 25%;
+    }
+}
