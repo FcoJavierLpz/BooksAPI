@@ -29,6 +29,6 @@
 </div>
 <section class="carousel">
     <div class="carousel__container">
-        <app-author *ngFor="let author of authors" [author]="author"></app-author>
+        <app-author (outAuthor)="modifAuthor($event)" *ngFor="let author of authors" [author]="author"></app-author>
     </div>
 </section>

@@ -1,4 +1,4 @@
-import { Component, Input, Output, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Author } from './author.model';
 import { AuthorsService } from '../services/authors.service';
 
@@ -9,19 +9,23 @@ import { AuthorsService } from '../services/authors.service';
 })
 export class AuthorComponent implements OnInit {
   @Input() author: Author;
-
+  @Output() outAuthor: EventEmitter<any> = new EventEmitter();
   constructor(private authorsService: AuthorsService) { }
 
   ngOnInit() {
   }
 
-  deleteAuthor(author: Author) {
-    if (confirm(`Seguro que desea borrar el autor: ' ${author.name}`)) {
-      this.authorsService.deleteAuthor(author.id).then(() => {
+  deleteAuthor() {
+    if (confirm(`Seguro que desea borrar el autor: ${this.author.name}`)) {
+      this.authorsService.deleteAuthor(this.author.id).then(() => {
       }, (error) => {
         console.error(error);
       });
     }
+  }
+
+  editAuthor() {
+    this.outAuthor.emit(this.author);
   }
 
 }

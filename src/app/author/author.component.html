@@ -2,7 +2,7 @@
     <img class="carousel-item__img" [src]="author.url" alt="author"/>
     <div class="carousel-item__details">
     <div>
-        <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit">
+        <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit" (click)='editAuthor(author)'>
         <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete" (click)="deleteAuthor(author)">
     </div>
     <p class="carousel-item__details--title">{{ author.name }}</p>

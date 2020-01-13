@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit } from '@angular/core';
 import { AuthorsService } from '../services/authors.service';
 import { Author } from '../author/author.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -41,7 +41,10 @@ export class AuthorsComponent implements OnInit {
     });
   }
 
-  showForm() {
+  showForm(flag: boolean) {
+    if (!flag) {
+      this.authorForm.reset();
+    }
     this.hide = !this.hide;
     if (this.hide) {
       this.add = 'Ocultar Formulario';
@@ -51,11 +54,27 @@ export class AuthorsComponent implements OnInit {
   }
 
   saveAuthor(author: Author) {
-    this.authorsService.createAuthor(author).then(() => {
-      author = null;
-      this.authorForm.reset();
-      this.hide = false;
-      this.add = 'Agregar Autores';
+    if (!author.id) {
+      this.authorsService.createAuthor(author).then(() => {
+        author = null;
+        this.showForm(true);
+      });
+    } else {
+      this.authorsService.editAuthor(author).then(() => {
+        author = null;
+        this.showForm(true);
+      });
+    }
+  }
+
+  modifAuthor(author: Author) {
+    this.showForm(false);
+    this.authorForm.setValue({
+      id: author.id,
+      name: author.name,
+      url: author.url,
+      nationality: author.nationality,
+      birth: author.birth
     });
   }
 
