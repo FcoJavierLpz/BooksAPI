@@ -9,6 +9,7 @@ import { BooksService } from './services/books.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,12 +18,12 @@ import { AuthorsComponent } from './authors/authors.component';
 import { AuthorComponent } from './author/author.component';
 import { BooksComponent } from './books/books.component';
 import { BookComponent } from './book/book.component';
-import { LayoutComponent } from './layout/layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
     HomeComponent,
     HeaderComponent,
     FooterComponent,
@@ -31,7 +32,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AuthorComponent,
     BooksComponent,
     BookComponent,
-    LayoutComponent,
     PageNotFoundComponent
   ],
   imports: [

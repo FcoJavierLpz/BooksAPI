@@ -5,7 +5,7 @@
 <div *ngIf="hide">
     <div class="d-flex justify-content-start p-4">
         <form class="form" [formGroup]="authorForm" (ngSubmit)="saveAuthor(authorForm.value)">
-            <input type="hidden" formControlName="id">
+            <input type="hidden" name="id" formControlName="id">
             <div class="form-group">
                 <label for="name">Nombre</label>
                 <input type="text" class="form-control" formControlName="name" aria-describedby="name">
