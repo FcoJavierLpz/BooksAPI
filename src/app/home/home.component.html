@@ -1,3 +1,7 @@
-<app-search></app-search>
-<app-authors></app-authors>
-<app-books></app-books>
+<div class="container">
+  <h2 class="search__title">¿Qué quieres leer hoy?</h2>
+  <input type="text" class="input" placeholder="Buscar..." [(ngModel)]="search">
+</div>
+<app-authors searchAuthor="{{search}}"></app-authors >
+<app-books searchBook="{{search}}"></app-books>
+
