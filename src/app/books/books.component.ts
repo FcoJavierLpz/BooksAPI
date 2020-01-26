@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BooksService } from '../services/books.service';
 import { Book } from '../book/book.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -18,6 +18,7 @@ export class BooksComponent implements OnInit {
   urlPattern = '(http(s?):)([/|.|\\w|\\s|-])*\\.(?:jpg|gif|png|jpeg)';
   books: Book[] = [];
   authors: Author[] = [];
+  @Input() searchBook = '';
   constructor(private booksService: BooksService, private authorsService: AuthorsService, private builder: FormBuilder) {
     this.bookForm = this.builder.group({
       id: [''],

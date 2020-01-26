@@ -19,6 +19,7 @@ import { AuthorComponent } from './author/author.component';
 import { BooksComponent } from './books/books.component';
 import { BookComponent } from './book/book.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    Ng2SearchPipeModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [AngularFirestore, AuthorsService, BooksService],

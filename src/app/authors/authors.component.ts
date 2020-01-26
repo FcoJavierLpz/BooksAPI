@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AuthorsService } from '../services/authors.service';
 import { Author } from '../author/author.model';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -14,8 +14,8 @@ export class AuthorsComponent implements OnInit {
   hide = false;
   authorForm: FormGroup;
   urlPattern = '(http(s?):)([/|.|\\w|\\s|-])*\\.(?:jpg|gif|png|jpeg)';
-
   authors: Author[] = [];
+  @Input() searchAuthor = '';
   constructor(private authorsService: AuthorsService, private builder: FormBuilder) {
     this.authorForm = this.builder.group({
       id: [''],
