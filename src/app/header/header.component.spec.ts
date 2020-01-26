@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
 import { HeaderComponent } from './header.component';
 
@@ -15,8 +16,13 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     fixture = TestBed.createComponent(HeaderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    component = fixture.debugElement.componentInstance;
+    console.log('component not null:' , component);
+  });
+
+  it('should have a HeaderComponent', () => {
+    const header = fixture.debugElement.query(By.css('header'));
+    expect(header).not.toBeNull();
   });
 
 });
