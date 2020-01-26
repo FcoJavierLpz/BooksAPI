@@ -30,6 +30,6 @@
 </div>
 <section class="carousel">
     <div class="carousel__container">
-        <app-book (outBook)="modifBook($event)" *ngFor="let book of books" [book]="book"></app-book>
+        <app-book (outBook)="modifBook($event)" *ngFor="let book of books | filter:searchBook" [book]="book"></app-book>
     </div>
 </section>
