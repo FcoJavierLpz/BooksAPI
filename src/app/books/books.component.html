@@ -1,11 +1,11 @@
 <div>
     <span class="categories__title mr-5">{{ title }}</span>
-    <button type="button" class="btn btn-light bgcolor-primary color-primary" (click)="showForm()">{{ add }}</button>
+    <button type="button" class="btn btn-light bgcolor-primary color-primary" (click)="showForm(false)">{{ add }}</button>
 </div>
 <div *ngIf="hide">
     <div class="d-flex justify-content-start p-4">
         <form class="form" [formGroup]="bookForm" (ngSubmit)="saveBook(bookForm.value)">
-            <input type="hidden" formControlName="id">
+            <input type="hidden" name="id" formControlName="id" value="">
             <div class="form-group">
                 <label for="name">Nombre</label>
                 <input type="text" class="form-control" formControlName="name" aria-describedby="name">

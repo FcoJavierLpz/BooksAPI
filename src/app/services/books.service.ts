@@ -19,7 +19,7 @@ export class BooksService {
     return this.firestore.collection('books').add(book);
   }
   public editBook(book: Book) {
-    return this.firestore.collection('books').doc(book.id).set(book);
+    return this.firestore.collection('books').doc(book.id.toString()).set(book);
   }
   public deleteBook(id: string) {
     return this.firestore.collection('books').doc(id).delete();
