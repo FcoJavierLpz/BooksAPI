@@ -2,8 +2,8 @@
     <img class="carousel-item__img" [src]="book.url" alt="book"/>
     <div class="carousel-item__details">
         <div>
-            <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit" (click)='editBook(book)'>
-            <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete" (click)="deleteBook(book)">
+            <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit" (click)='editBook()'>
+            <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete" (click)="deleteBook()">
         </div>
         <p class="carousel-item__details--title">{{ book.name }}</p>
         <p class="carousel-item__details--subtitle">{{ book.author }}</p>

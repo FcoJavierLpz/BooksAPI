@@ -2,8 +2,8 @@
     <img class="carousel-item__img" [src]="author.url" alt="author"/>
     <div class="carousel-item__details">
     <div>
-        <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit" (click)='editAuthor(author)'>
-        <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete" (click)="deleteAuthor(author)">
+        <img class="carousel-item__details--img" src="../../assets/img/edit.png" alt="Edit" (click)='editAuthor()'>
+        <img class="carousel-item__details--img" src="../../assets/img/delete.png" alt="Delete" (click)="deleteAuthor()">
     </div>
     <p class="carousel-item__details--title">{{ author.name }}</p>
     <p class="carousel-item__details--subtitle">{{ author.birth | date: 'dd/MM/yyyy' }} </p>
