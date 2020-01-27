@@ -19,6 +19,7 @@ const routes: Routes = [
         path: 'home',
         component: HomeComponent
       },
+      // otherwise redirect to 404
       {
         path: '**',
         component: PageNotFoundComponent

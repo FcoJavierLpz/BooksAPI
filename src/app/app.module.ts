@@ -13,7 +13,6 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './search/search.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { AuthorComponent } from './author/author.component';
 import { BooksComponent } from './books/books.component';
@@ -28,7 +27,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    SearchComponent,
     AuthorsComponent,
     AuthorComponent,
     BooksComponent,

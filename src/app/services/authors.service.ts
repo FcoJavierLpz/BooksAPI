@@ -19,7 +19,7 @@ export class AuthorsService {
     return this.firestore.collection('authors').add(author);
   }
   public editAuthor(author: Author) {
-    return this.firestore.collection('authors').doc(author.id).set(author);
+    return this.firestore.collection('authors').doc(author.id.toString()).set(author);
   }
   public deleteAuthor(id: string) {
     return this.firestore.collection('authors').doc(id).delete();

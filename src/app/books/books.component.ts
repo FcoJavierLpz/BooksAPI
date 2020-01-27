@@ -5,20 +5,47 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthorsService } from '../services/authors.service';
 import { Author } from '../author/author.model';
 
+/**
+ * Books Component
+ * Component used to representate a books series
+ * @export
+ */
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.scss']
 })
+
 export class BooksComponent implements OnInit {
   title = 'Libros';
   add = 'Agregar Libros';
   hide = false;
+
+  /**
+   * Representation of the input data for the book form
+   */
   bookForm: FormGroup;
+
+  /**
+   * Regular expression that validates an image url
+   */
   urlPattern = '(http(s?):)([/|.|\\w|\\s|-])*\\.(?:jpg|gif|png|jpeg)';
+
+  /**
+   * Accepts an array of book
+   */
   books: Book[] = [];
+
+  /**
+   * Accepts an array of author
+   */
   authors: Author[] = [];
+
+  /**
+   * Text string to perform a search by book
+   */
   @Input() searchBook = '';
+
   constructor(private booksService: BooksService, private authorsService: AuthorsService, private builder: FormBuilder) {
     this.bookForm = this.builder.group({
       id: [''],
@@ -56,6 +83,10 @@ export class BooksComponent implements OnInit {
     });
   }
 
+  /**
+   * Show and hide form to add books
+   * @param boolean flag to reset the form
+   */
   showForm(flag: boolean) {
     if (!flag) {
       this.bookForm.reset();
@@ -68,8 +99,13 @@ export class BooksComponent implements OnInit {
     }
   }
 
+  /**
+   * Save or update information related to a book
+   * @param Book book
+   */
   saveBook(book: Book) {
     if (!book.id) {
+      book.id = Date.now();
       this.booksService.createBook(book).then(() => {
         book = null;
         this.showForm(true);
@@ -82,6 +118,10 @@ export class BooksComponent implements OnInit {
     }
   }
 
+  /**
+   * Bring to the form the information related to the book you want to modify
+   * @param Book book
+   */
   modifBook(book: Book) {
     this.showForm(false);
     this.bookForm.setValue({
